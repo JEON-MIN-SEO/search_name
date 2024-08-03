@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage People</title>
+</head>
+<body>
+<h1>Manage People</h1>
+<h2>Add Person</h2>
+<form action="/manage/add" method="post">
+    <input type="text" name="name" placeholder="Enter name">
+    <input type="number" name="floor" placeholder="Enter floor">
+    <button type="submit">Add</button>
+</form>
+
+<h2>Update Person</h2>
+<form action="/manage/update" method="post">
+    <input type="hidden" name="id" th:value="${person.id}">
+    <input type="text" name="name" th:value="${person.name}">
+    <input type="number" name="floor" th:value="${person.floor}">
+    <button type="submit">Update</button>
+</form>
+
+<h2>Delete Person</h2>
+<form action="/manage/delete" method="post">
+    <input type="hidden" name="id" th:value="${person.id}">
+    <button type="submit">Delete</button>
+</form>
+
+<h2>People List</h2>
+<ul>
+    <li th:each="person : ${people}">
+        <span th:text="${person.name}"></span> - <span th:text="${person.floor}"></span>
+    </li>
+</ul>
+</body>
+</html>

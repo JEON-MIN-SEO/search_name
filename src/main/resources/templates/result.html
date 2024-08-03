@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+</head>
+<body>
+<h1>Search Result</h1>
+<div th:if="${person != null}">
+    <p>Name: <span th:text="${person.name}"></span></p>
+    <p>Floor: <span th:text="${person.floor}"></span></p>
+</div>
+<div th:if="${message != null}">
+    <p th:text="${message}"></p>
+</div>
+<a href="/">Back to Home</a>
+</body>
+</html>
