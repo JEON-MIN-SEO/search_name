@@ -63,4 +63,10 @@ public class PersonController {
         personService.deleteById(id);
         return "redirect:/manage";
     }
+
+    @PostMapping("/admin/delete")
+    public String adminDelete(@RequestParam Long id) {
+        personService.deleteById(id);
+        return "redirect:/manage";
+    }
 }
